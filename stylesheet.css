@@ -1,6 +1,14 @@
 .practice {
-  padding: 20px;
-  background: green;
-  color: black;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  border: 10px solid lightskyblue;
+  padding: 0px 5px 0px 5px;
   font-family: Arial, Helvetica, sans-serif;
+  color:lightblue;
+}
+body{
+  background: black;
 }
