@@ -8,8 +8,8 @@ class App extends React.Component {
   }
   render() {
     return (
-    <div>
-      You are rendering from app
+    <div className='practice'>
+      CSS Loaders are awesome! 
     </div>
     )
   }
