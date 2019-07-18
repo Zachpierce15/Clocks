@@ -28,7 +28,9 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "style-loader": "^0.23.1",
+    "css-loader": "^3.1.0"
   },
   "dependencies": {
     "body": "^5.1.0",
