@@ -1,5 +1,5 @@
 import React from 'react';
-import Clock from './clock.jsx';
+import Clock from './digitalClock.jsx';
 import Buttons from './buttons.jsx';
 
 class App extends React.Component {
@@ -9,34 +9,44 @@ class App extends React.Component {
       digital: true,
       analog: false,
     };
-    //bind functions here
     this.changeClockToAnalog = this.changeClockToAnalog.bind(this);
     this.changeClockToDigital = this.changeClockToDigital.bind(this);
   }
+
   // ================ Clock Changes ==================
   changeClockToAnalog() {
-    console.log('made it to analog')
-    // this.setState({
-    //   digital: false,
-    //   analog: true
-    // });
+    this.setState({
+      digital: false,
+      analog: true
+    });
   }
 
   changeClockToDigital() {
-    console.log('made it to digital')
-    // this.setState({
-    //   digital: true,
-    //   analog: false
-    // });
+    this.setState({
+      digital: true,
+      analog: false
+    });
   }
-  // ==================================================
+
   render() {
-    return (
-    <div>
-      <Buttons analog={this.changeClockToAnalog} digital={this.changeClockToDigital} />
-      <Clock />
-    </div>
-    )
+    //  =========== Digital Clock Display ==============
+    if(this.state.digital) {
+      return (
+      <div>
+        <Buttons analog={this.changeClockToAnalog} digital={this.changeClockToDigital} />
+        <Clock />
+      </div>
+      )
+    }
+    // ============= Analog Clock Display ===============
+    if(this.state.analog) {
+      return (
+        <div>
+          <Buttons analog={this.changeClockToAnalog} digital={this.changeClockToDigital} />
+          {/* <Clock /> */}
+        </div>
+        )
+    }
   }
 }
 export default App
