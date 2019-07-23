@@ -22,3 +22,12 @@ button{
 h3{
   color: white;
 }
+.Alarm {
+  text-align: left;
+  margin-top: 40px;
+  margin-left: 50px;
+}
+.alarm-item {
+  color: white;
+  text-align: center;
+}

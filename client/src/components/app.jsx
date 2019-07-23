@@ -8,6 +8,12 @@ class App extends React.Component {
     this.state = {
       digital: true,
       analog: false,
+      alarms:[{
+        time: '12:20:00 PM',
+      },
+    {
+      time: '1:40:00 AM'
+    }],
     };
     this.changeClockToAnalog = this.changeClockToAnalog.bind(this);
     this.changeClockToDigital = this.changeClockToDigital.bind(this);
@@ -17,7 +23,7 @@ class App extends React.Component {
   changeClockToAnalog() {
     this.setState({
       digital: false,
-      analog: true
+      analog: true,
     });
   }
 
@@ -34,7 +40,7 @@ class App extends React.Component {
       return (
       <div>
         <Buttons analog={this.changeClockToAnalog} digital={this.changeClockToDigital} />
-        <Clock />
+        <Clock alarms={this.state.alarms}/>
       </div>
       )
     }
