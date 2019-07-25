@@ -14,6 +14,7 @@ class App extends React.Component {
     {
       time: '1:40:00 AM'
     }],
+    startingOut: true,
     };
     this.changeClockToAnalog = this.changeClockToAnalog.bind(this);
     this.changeClockToDigital = this.changeClockToDigital.bind(this);
@@ -35,23 +36,31 @@ class App extends React.Component {
   }
 
   render() {
-    //  =========== Digital Clock Display ==============
-    if(this.state.digital) {
+    if(this.state.startingOut) {
       return (
-      <div>
-        <Buttons analog={this.changeClockToAnalog} digital={this.changeClockToDigital} />
-        <Clock alarms={this.state.alarms}/>
-      </div>
+        <div className='practice'>
+          hello
+        </div>
       )
-    }
-    // ============= Analog Clock Display ===============
-    if(this.state.analog) {
-      return (
+    } else {
+      //  =========== Digital Clock Display ==============
+      if(this.state.digital) {
+        return (
         <div>
           <Buttons analog={this.changeClockToAnalog} digital={this.changeClockToDigital} />
-          {/* <Clock /> */}
+          <Clock alarms={this.state.alarms}/>
         </div>
         )
+      }
+      // ============= Analog Clock Display ===============
+      if(this.state.analog) {
+        return (
+          <div>
+            <Buttons analog={this.changeClockToAnalog} digital={this.changeClockToDigital} />
+            {/* <Clock /> */}
+          </div>
+          )
+      }
     }
   }
 }
