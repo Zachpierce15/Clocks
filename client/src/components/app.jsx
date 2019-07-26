@@ -1,6 +1,7 @@
 import React from 'react';
 import Clock from './digitalClock.jsx';
 import Buttons from './buttons.jsx';
+import Info from './inputInfo.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -38,8 +39,8 @@ class App extends React.Component {
   render() {
     if(this.state.startingOut) {
       return (
-        <div className='practice'>
-          hello
+        <div className='info'>
+          <Info />
         </div>
       )
     } else {
