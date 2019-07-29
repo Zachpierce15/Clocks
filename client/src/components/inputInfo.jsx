@@ -8,11 +8,12 @@ class Info extends React.Component {
   }
 
   render() {
+    const {change} = this.props
     return (
       <div>
         <div className='newUser' >Not a user?</div>
         <button className='newUser' >Click Here</button>
-        <form className ='newInfo'>
+        <form className ='newInfo' onSubmit={change}>
 
           <label>
             Username

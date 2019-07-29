@@ -19,6 +19,7 @@ class App extends React.Component {
     };
     this.changeClockToAnalog = this.changeClockToAnalog.bind(this);
     this.changeClockToDigital = this.changeClockToDigital.bind(this);
+    this.changeToClock = this.changeToClock.bind(this);
   }
 
   // ================ Clock Changes ==================
@@ -35,12 +36,18 @@ class App extends React.Component {
       analog: false
     });
   }
+  // =============== User input is done =================
+
+  changeToClock () {
+    console.log('made it here')
+    this.setState({ startingOut: false })
+  }
 
   render() {
     if(this.state.startingOut) {
       return (
         <div className='info'>
-          <Info />
+          <Info change={this.changeToClock}/>
         </div>
       )
     } else {
